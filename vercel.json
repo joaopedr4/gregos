@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Gregos_Site_Promocoes.html" },
+    { "source": "/painel", "destination": "/Gregos_Painel_Interno.html" }
+  ]
+}
