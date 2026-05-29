@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="logo.PNG" />
 <link rel="preload" as="image" href="combo-rucula.jpg" />
 <link rel="preload" as="image" href="dobradinha.jpg" />
 <style>
@@ -55,6 +56,7 @@
   }
   .mascote{
     width:78px;height:78px;flex:0 0 auto;
+    object-fit:contain;
     filter:drop-shadow(0 6px 10px rgba(0,0,0,.25));
   }
 
@@ -106,11 +108,26 @@
   }
   .to .por{font-size:18px;opacity:.92}
 
+  /* BOTÃO PEDIR AGORA (por card) */
+  .order-wrap{margin-top:18px;text-align:center}
+  .order-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--cream);color:var(--red);
+    border-radius:999px;border:none;cursor:pointer;
+    padding:14px 32px;
+    font-family:var(--font);font-weight:700;font-size:16px;
+    text-transform:uppercase;letter-spacing:.05em;text-decoration:none;
+    box-shadow:0 5px 0 var(--red-deep);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .order-btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--red-deep)}
+  .order-btn svg{width:16px;height:16px}
+
   /* DIVISOR ENTRE CARDS */
   .divider{
     height:3px;border-radius:2px;
     background:rgba(246,241,223,.35);
-    margin:6px 24px 0;
+    margin:24px 24px 0;
   }
 
   /* CTA */
@@ -183,55 +200,64 @@
         <span class="badge">Sexta do Combo Grego</span>
         <p class="sub">Um pra matar a fome,<br/>outro pra dividir</p>
       </div>
-      <!-- Mascote SVG inline (boy chef simplificado) -->
-      <svg class="mascote" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="mascote Grego's">
-        <!-- chapéu de chef -->
-        <ellipse cx="50" cy="22" rx="26" ry="10" fill="#F6F1DF"/>
-        <path d="M28 22 Q24 36 32 42 L68 42 Q76 36 72 22 Z" fill="#F6F1DF"/>
-        <!-- rosto -->
-        <circle cx="50" cy="58" r="26" fill="#F6F1DF"/>
-        <!-- olhos -->
-        <circle cx="40" cy="56" r="2.5" fill="#E21C0F"/>
-        <circle cx="60" cy="56" r="2.5" fill="#E21C0F"/>
-        <!-- sorriso -->
-        <path d="M40 66 Q50 74 60 66" stroke="#E21C0F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
+      <img class="mascote" src="logo.PNG" alt="Logo Grego's" />
+
     </header>
 
     <!-- CARDS -->
     <section class="cards" aria-label="Combos da Sexta">
 
       <!-- COMBO RÚCULA -->
-      <a href="#combo-rucula" class="card" id="link-rucula" aria-label="Pedir Combo Rúcula">
-        <div class="photo">
-          <img src="combo-rucula.jpg" alt="Combo Rúcula" loading="eager" decoding="async"/>
-        </div>
-        <div class="info">
-          <h2 class="name">Combo Rúcula</h2>
-          <p class="compo">1 Grego Rúcula + Batata + Refri</p>
-          <div class="price">
-            <span class="from">De R$67</span>
-            <span class="to"><span class="por">POR</span>R$57</span>
+      <div class="card">
+        <a href="#combo-rucula" id="link-rucula-img" aria-label="Pedir Combo Rúcula" style="display:block;text-decoration:none;color:inherit">
+          <div class="photo">
+            <img src="combo-rucula.jpg" alt="Combo Rúcula" loading="eager" decoding="async"/>
           </div>
+          <div class="info">
+            <h2 class="name">Combo Rúcula</h2>
+            <p class="compo">1 Grego Rúcula + Batata + Refri</p>
+            <div class="price">
+              <span class="from">De R$67</span>
+              <span class="to"><span class="por">POR</span>R$57</span>
+            </div>
+          </div>
+        </a>
+        <div class="order-wrap">
+          <a href="#combo-rucula" class="order-btn" id="link-rucula" aria-label="Pedir Combo Rúcula agora">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 4h-2l-1 2v2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h12v-2h-11.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1h-14.79l-.94-2zm0 14c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            Pedir Agora
+          </a>
         </div>
-      </a>
+      </div>
 
       <div class="divider" aria-hidden="true"></div>
 
       <!-- DOBRADINHA GREGA -->
-      <a href="#dobradinha" class="card" id="link-dobradinha" aria-label="Pedir Dobradinha Grega">
-        <div class="photo">
-          <img src="dobradinha.jpg" alt="Dobradinha Grega" loading="lazy" decoding="async"/>
-        </div>
-        <div class="info">
-          <h2 class="name">Dobradinha Grega</h2>
-          <p class="compo">2 Gregos + Batata Grega + 2 Refris</p>
-          <div class="price">
-            <span class="from">De R$124</span>
-            <span class="to"><span class="por">POR</span>R$107</span>
+      <div class="card">
+        <a href="#dobradinha" id="link-dobradinha-img" aria-label="Pedir Dobradinha Grega" style="display:block;text-decoration:none;color:inherit">
+          <div class="photo">
+            <img src="dobradinha.jpg" alt="Dobradinha Grega" loading="lazy" decoding="async"/>
           </div>
+          <div class="info">
+            <h2 class="name">Dobradinha Grega</h2>
+            <p class="compo">2 Gregos + Batata Grega + 2 Refris</p>
+            <div class="price">
+              <span class="from">De R$124</span>
+              <span class="to"><span class="por">POR</span>R$107</span>
+            </div>
+          </div>
+        </a>
+        <div class="order-wrap">
+          <a href="#dobradinha" class="order-btn" id="link-dobradinha" aria-label="Pedir Dobradinha Grega agora">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M7 4h-2l-1 2v2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h12v-2h-11.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1h-14.79l-.94-2zm0 14c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            Pedir Agora
+          </a>
         </div>
-      </a>
+      </div>
 
     </section>
 
@@ -257,11 +283,13 @@
     const LINK_WHATSAPP = "https://api.whatsapp.com/send/?phone=5511921066513";
 
     document.getElementById('link-rucula').href = LINK_RUCULA;
+    document.getElementById('link-rucula-img').href = LINK_RUCULA;
     document.getElementById('link-dobradinha').href = LINK_DOBRADINHA;
+    document.getElementById('link-dobradinha-img').href = LINK_DOBRADINHA;
     document.getElementById('link-whats').href = LINK_WHATSAPP;
 
     // Abre em nova aba
-    document.querySelectorAll('a.card, a.cta').forEach(a => {
+    document.querySelectorAll('.card a, a.cta, a.order-btn').forEach(a => {
       a.target = '_blank';
       a.rel = 'noopener';
     });
