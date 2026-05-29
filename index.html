@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Sexta do Combo Grego · Grego's</title>
+<meta name="description" content="Combo Rúcula por R$57 ou Dobradinha Grega por R$107. Só hoje na Grego's." />
+<meta name="theme-color" content="#E21C0F" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="combo-rucula.jpg" />
+<link rel="preload" as="image" href="dobradinha.jpg" />
+<style>
+  :root{
+    --red:#E21C0F;
+    --red-deep:#A11008;
+    --cream:#F6F1DF;
+    --beige:#F3DAC9;
+    --black:#1A1A1A;
+    --gray-strike:#C9B9A8;
+    --font:'Fredoka',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--red);color:var(--cream);font-family:var(--font);overflow-x:hidden;width:100%}
+  body{
+    min-height:100vh;
+    min-height:100dvh;
+    background-image:radial-gradient(circle, rgba(243,218,201,0.18) 2px, transparent 2.5px);
+    background-size:32px 32px;
+    padding:24px 20px 0;
+  }
+
+  /* CONTAINER MAX */
+  .wrap{max-width:560px;margin:0 auto;position:relative;padding-bottom:60px}
+
+  /* HEADER */
+  .head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+  .head-text{flex:1 1 auto;text-align:center;padding-top:6px}
+  .badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--cream);color:var(--red);
+    border-radius:999px;
+    padding:9px 18px;
+    font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+    box-shadow:0 4px 0 var(--red-deep);
+    white-space:nowrap;
+  }
+  .sub{
+    margin:14px 0 0;
+    font-weight:600;font-size:18px;
+    text-transform:uppercase;letter-spacing:.02em;
+    color:var(--beige);line-height:1.2;
+    text-wrap:balance;
+  }
+  .mascote{
+    width:78px;height:78px;flex:0 0 auto;
+    filter:drop-shadow(0 6px 10px rgba(0,0,0,.25));
+  }
+
+  /* CARDS */
+  .cards{display:flex;flex-direction:column;gap:24px;margin-top:28px}
+  .card{
+    display:block;text-decoration:none;color:inherit;
+    background:transparent;border:none;cursor:pointer;
+    padding:0;width:100%;font-family:inherit;
+    transition:transform .15s ease;
+  }
+  .card:active{transform:scale(.98)}
+
+  .photo{
+    width:100%;
+    border:9px solid var(--cream);
+    background:var(--cream);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 12px 0 rgba(0,0,0,.12), 0 18px 32px rgba(0,0,0,.22);
+    aspect-ratio: 16 / 10;
+  }
+  .photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 50%}
+
+  .info{text-align:center;padding-top:18px}
+  .name{
+    margin:0;
+    font-weight:700;font-size:30px;
+    text-transform:uppercase;letter-spacing:.005em;line-height:1;
+    color:var(--cream);
+  }
+  .compo{
+    margin:6px 0 12px;
+    font-weight:500;font-size:13px;
+    text-transform:uppercase;letter-spacing:.02em;
+    color:var(--beige);opacity:.95;
+  }
+  .price{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .from{
+    font-weight:600;font-size:14px;color:var(--gray-strike);
+    text-decoration:line-through;text-decoration-thickness:2.5px;
+    text-transform:uppercase;letter-spacing:.02em;
+    margin-bottom:4px;
+  }
+  .to{
+    display:inline-flex;align-items:baseline;gap:6px;
+    font-weight:700;font-size:48px;color:var(--cream);
+    letter-spacing:.005em;line-height:.86;
+  }
+  .to .por{font-size:18px;opacity:.92}
+
+  /* DIVISOR ENTRE CARDS */
+  .divider{
+    height:3px;border-radius:2px;
+    background:rgba(246,241,223,.35);
+    margin:6px 24px 0;
+  }
+
+  /* CTA */
+  .cta-wrap{margin-top:34px;text-align:center}
+  .cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--cream);color:var(--red);
+    border-radius:999px;border:none;cursor:pointer;
+    padding:18px 36px;
+    font-family:var(--font);font-weight:700;font-size:18px;
+    text-transform:uppercase;letter-spacing:.05em;text-decoration:none;
+    box-shadow:0 6px 0 var(--red-deep);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--red-deep)}
+  .cta svg{width:18px;height:18px}
+  .cta-hint{
+    margin:0 0 12px;
+    font-weight:500;font-size:14px;color:var(--beige);
+    letter-spacing:.02em;text-transform:uppercase;
+  }
+  .cta-whats{
+    background:#25D366;color:#fff;
+    box-shadow:0 6px 0 #128C7E;
+  }
+  .cta-whats:active{box-shadow:0 3px 0 #128C7E}
+  .cta-whats svg{width:22px;height:22px}
+  .handle{margin-top:16px;font-weight:600;font-size:14px;color:var(--cream);letter-spacing:.02em}
+
+  /* FAIXA XADREZ RODAPÉ */
+  .checker{
+    position:fixed;bottom:0;left:0;right:0;height:24px;
+    background-image:conic-gradient(var(--cream) 25%, var(--red) 0 50%, var(--cream) 0 75%, var(--red) 0);
+    background-size:24px 24px;
+    z-index:10;
+  }
+  /* compensar a barra fixa */
+  body{padding-bottom:24px}
+
+  /* MOBILE PEQUENO */
+  @media (max-width:380px){
+    body{padding:20px 16px 24px}
+    .badge{font-size:12px;padding:8px 14px}
+    .sub{font-size:16px}
+    .mascote{width:64px;height:64px}
+    .name{font-size:26px}
+    .to{font-size:42px}
+    .to .por{font-size:16px}
+    .cta{font-size:16px;padding:16px 28px}
+  }
+
+  /* DESKTOP */
+  @media (min-width:560px){
+    body{padding-top:48px}
+    .wrap{max-width:600px}
+    .sub{font-size:20px}
+    .name{font-size:34px}
+    .to{font-size:54px}
+    .to .por{font-size:20px}
+    .mascote{width:92px;height:92px}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- HEADER -->
+    <header class="head">
+      <div style="width:78px;flex:0 0 auto" aria-hidden="true"></div>
+      <div class="head-text">
+        <span class="badge">Sexta do Combo Grego</span>
+        <p class="sub">Um pra matar a fome,<br/>outro pra dividir</p>
+      </div>
+      <!-- Mascote SVG inline (boy chef simplificado) -->
+      <svg class="mascote" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="mascote Grego's">
+        <!-- chapéu de chef -->
+        <ellipse cx="50" cy="22" rx="26" ry="10" fill="#F6F1DF"/>
+        <path d="M28 22 Q24 36 32 42 L68 42 Q76 36 72 22 Z" fill="#F6F1DF"/>
+        <!-- rosto -->
+        <circle cx="50" cy="58" r="26" fill="#F6F1DF"/>
+        <!-- olhos -->
+        <circle cx="40" cy="56" r="2.5" fill="#E21C0F"/>
+        <circle cx="60" cy="56" r="2.5" fill="#E21C0F"/>
+        <!-- sorriso -->
+        <path d="M40 66 Q50 74 60 66" stroke="#E21C0F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </header>
+
+    <!-- CARDS -->
+    <section class="cards" aria-label="Combos da Sexta">
+
+      <!-- COMBO RÚCULA -->
+      <a href="#combo-rucula" class="card" id="link-rucula" aria-label="Pedir Combo Rúcula">
+        <div class="photo">
+          <img src="combo-rucula.jpg" alt="Combo Rúcula" loading="eager" decoding="async"/>
+        </div>
+        <div class="info">
+          <h2 class="name">Combo Rúcula</h2>
+          <p class="compo">1 Grego Rúcula + Batata + Refri</p>
+          <div class="price">
+            <span class="from">De R$67</span>
+            <span class="to"><span class="por">POR</span>R$57</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- DOBRADINHA GREGA -->
+      <a href="#dobradinha" class="card" id="link-dobradinha" aria-label="Pedir Dobradinha Grega">
+        <div class="photo">
+          <img src="dobradinha.jpg" alt="Dobradinha Grega" loading="lazy" decoding="async"/>
+        </div>
+        <div class="info">
+          <h2 class="name">Dobradinha Grega</h2>
+          <p class="compo">2 Gregos + Batata Grega + 2 Refris</p>
+          <div class="price">
+            <span class="from">De R$124</span>
+            <span class="to"><span class="por">POR</span>R$107</span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- CTA WhatsApp -->
+    <div class="cta-wrap">
+      <p class="cta-hint">Ou fala direto com a gente:</p>
+      <a href="#whatsapp" class="cta cta-whats" id="link-whats" aria-label="Pedir pelo WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.005a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Pedir pelo WhatsApp
+      </a>
+      <div class="handle">@gregosclp</div>
+    </div>
+  </main>
+
+  <div class="checker" aria-hidden="true"></div>
+
+  <script>
+    // Links de pedido — Sexta do Combo Grego
+    const LINK_RUCULA = "https://pedido.anota.ai/product/6a1a094de64f3bbeabb806af/0/gregos-3?o=a";
+    const LINK_DOBRADINHA = "https://pedido.anota.ai/product/6a1a0c337b8da2b22ae1610b/0/gregos-3?o=a";
+    const LINK_WHATSAPP = "https://api.whatsapp.com/send/?phone=5511921066513";
+
+    document.getElementById('link-rucula').href = LINK_RUCULA;
+    document.getElementById('link-dobradinha').href = LINK_DOBRADINHA;
+    document.getElementById('link-whats').href = LINK_WHATSAPP;
+
+    // Abre em nova aba
+    document.querySelectorAll('a.card, a.cta').forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+  </script>
+</body>
+</html>
